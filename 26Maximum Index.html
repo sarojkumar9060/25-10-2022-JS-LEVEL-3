@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JavaScript program for the above approach
+        
+        /* For a given array arr[],
+        returns the maximum j – i such
+        that arr[j] > arr[i] */
+        function maxIndexDiff(arr, n)
+        {
+            let maxDiff = -1;
+            let i, j;
+        
+            for (i = 0; i < n; ++i)
+            {
+                for (j = n - 1; j > i; --j)
+                {
+                    if (arr[j] > arr[i] && maxDiff < (j - i))
+                        maxDiff = j - i;
+                }
+            }
+        
+            return maxDiff;
+        }
+        
+            // Driver code
+            let arr = [ 9, 2, 3, 4, 5, 6, 7, 8, 18, 0 ];
+            let n = arr.length;
+            let maxDiff = maxIndexDiff(arr, n);
+            document.write(maxDiff);
+        
+        // This code is contributed by Manoj.
+        </script>
+        
+</body>
+</html>
